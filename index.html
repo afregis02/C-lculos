@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programas de Cálculo</title>
+    <style>
+        body {
+            font-family: 'Lucida Sans', Geneva, Verdana, sans-serif;
+            margin: 20px;
+        }
+        h1, h2 { color: #333; }
+        form { margin-bottom: 20px; }
+        label { display: block; margin-bottom: 10px; }
+        input, button { padding: 5px; margin-bottom: 10px; }
+        button {
+            background-color: #6fdb4e; color: white;
+            border: none; border-radius: 5px; cursor: pointer;
+        }
+        button:hover { background-color: #24b300; }
+        #resultado { font-weight: bold; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+    <h1>Programas de Cálculo</h1>
+
+    <div id="suma-numeros">
+        <h2>1. Suma de Números Positivos</h2>
+        <button type="button" onclick="solicitarNumeros()">Iniciar</button>
+        <div id="resultado-suma" class="hidden"></div>
+    </div>
+
+    <div id="ordenar-numeros">
+        <h2>2. Ordenar Tres Números</h2>
+        <form id="form-ordenar">
+            <label for="num1">Número 1:</label>
+            <input type="text" id="num1" required oninput="validarNumero(this)">
+            <label for="num2">Número 2:</label>
+            <input type="text" id="num2" required oninput="validarNumero(this)">
+            <label for="num3">Número 3:</label>
+            <input type="text" id="num3" required oninput="validarNumero(this)">
+            <button type="button" onclick="ordenarNumeros()">Ordenar</button>
+        </form>
+        <div id="resultado-ordenar" class="hidden"></div>
+    </div>
+
+    <div id="calcular-impuesto">
+        <h2>3. Calcular Importe Neto</h2>
+        <form id="form-impuesto">
+            <label for="importe">Importe Bruto:</label>
+            <input type="text" id="importe" required oninput="validarNumero(this)">
+            <button type="button" onclick="calcularImpuesto()">Calcular</button>
+        </form>
+        <div id="resultado-impuesto" class="hidden"></div>
+    </div>
+
+    <div id="calcular-sueldo">
+        <h2>4. Calcular Sueldo Anual</h2>
+        <form id="form-sueldo">
+            <label for="anios">Años en la empresa:</label>
+            <input type="text" id="anios" required oninput="validarNumero(this)">
+            <button type="button" onclick="calcularSueldo()">Calcular</button>
+        </form>
+        <div id="resultado-sueldo" class="hidden"></div>
+    </div>
+
+    <script src="funciones.js"></script>
+</body>
+</html>
